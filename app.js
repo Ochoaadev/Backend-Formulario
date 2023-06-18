@@ -12,7 +12,7 @@ const connection = mysql.createConnection({
   database: 'dataform', 
 });
 
-// Conéctate a la base de datos
+// Conectando base de datos
 connection.connect((error) => {
   if (error) {
     console.error('Error al conectar a la base de datos: ' + error.stack);
@@ -21,7 +21,7 @@ connection.connect((error) => {
   console.log('Conexión exitosa a la base de datos');
 });
 
-// Configura el middleware para procesar los datos enviados en el cuerpo de la solicitud
+//Middleware
 app.use(express.urlencoded({ extended: true }));
 
 // Ruta para procesar el formulario
@@ -41,7 +41,6 @@ app.post('/form', (req, res) => {
   });
 });
 
-// Inicia el servidor
 app.listen(port, () => {
   console.log(`Servidor iniciado en puerto:${port}`);
 });
